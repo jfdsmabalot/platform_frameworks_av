@@ -59,9 +59,9 @@ LOCAL_SRC_FILES:= \
 LOCAL_SRC_FILES += ../libnbaio/roundup.c
 
 # for <cutils/atomic-inline.h>
-LOCAL_CFLAGS += -DANDROID_SMP=$(if $(findstring true,$(TARGET_CPU_SMP)),1,0)
+LOCAL_CFLAGS += -DANDROID_SMP=$(if $(findstring true,$(TARGET_CPU_SMP)),1,0) -fno-strict-aliasing
 LOCAL_SRC_FILES += SingleStateQueue.cpp
-LOCAL_CFLAGS += -DSINGLE_STATE_QUEUE_INSTANTIATIONS='"SingleStateQueueInstantiations.cpp"'
+LOCAL_CFLAGS += -DSINGLE_STATE_QUEUE_INSTANTIATIONS='"SingleStateQueueInstantiations.cpp"' -fno-strict-aliasing
 # Consider a separate a library for SingleStateQueueInstantiations.
 
 LOCAL_SHARED_LIBRARIES := \

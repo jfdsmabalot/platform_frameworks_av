@@ -7,7 +7,7 @@ LOCAL_SRC_FILES:= \
 	EffectLoudnessEnhancer.cpp \
 	dsp/core/dynamic_range_compression.cpp
 
-LOCAL_CFLAGS+= -O2 -fvisibility=hidden
+LOCAL_CFLAGS+= -O2 -fvisibility=hidden -fno-strict-aliasing
 
 LOCAL_SHARED_LIBRARIES := \
 	libcutils \
